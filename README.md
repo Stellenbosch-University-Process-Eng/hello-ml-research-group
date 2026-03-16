@@ -19,8 +19,8 @@ You can do this in VSCode itself by opening a terminal using ``Ctrl + Shift + ` 
 
 ## Find your organization and locate a repository
 
-1.  Sign in to [Stellenbosch-University-Process-Eng organization](https://github.com) in your browser. Click your profile and switch to the [Stellenbosch-University-Process-Eng organization](https://github.com/Stellenbosch-University-Process-Eng).
-2.  Open the [repository](https://github.com/Stellenbosch-University-Process-Eng/hello-ml-research-group.git).
+1.  Sign in to [Github.com](https://github.com) in your browser. Click your profile and switch to the [Stellenbosch-University-Process-Eng organization](https://github.com/Stellenbosch-University-Process-Eng).
+2.  Open the [hello-ml-research-group repository](https://github.com/Stellenbosch-University-Process-Eng/hello-ml-research-group.git).
 3.  Open the repository's main page and locate the green Code dropdown, this is where you'll copy the repository URL for cloning.
 
 ![GitHub organization view with a repository selected](figures/copy_url.png)
@@ -79,7 +79,7 @@ Create a file called "hello_world.py" and place the code `print("Hello, World!")
 ## Stage and commit your changes
 *   A commit records a snapshot of the staged content and links it into the repository's history DAG. 
 * You **cannot** leave out the **commit message**, or the commit will not work.
-*   Commit message guidance: Use an imperative, concise subject and (when needed) a body explaining intent. Chris Beams' “Seven Rules” are widely cited for clarity and consistency. [\[cbea.ms\]](https://cbea.ms/git-commit/)
+*   Commit message guidance: Use an imperative, concise subject and (when needed) a body explaining intent. [Chris Beams' “Seven Rules”](https://cbea.ms/git-commit/) are widely cited for clarity and consistency. 
 
 
 ### Terminal
@@ -110,7 +110,7 @@ VS Code GUI mirrors the command-line operations.
 
 
 ## Open a Pull Request on GitHub.com
-A pull request is a proposal to merge changes from your branch into a target branch (commonly `main`). It provides a structured space for review, discussion, checks, and, eventually, integration. [\[docs.github.com\]](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
+A [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) is a proposal to merge changes from your branch into a target branch (usually `main`). It provides a structured space for review, discussion, checks, and, eventually, integration. 
 
 1.  Navigate to your repository on GitHub. You will typically see a prompt: “Compare & pull request” for your newly pushed branch.
 2.  Click it and fill out:
@@ -118,7 +118,13 @@ A pull request is a proposal to merge changes from your branch into a target bra
     *   Description: context, rationale, and any risks.
 3.  Submit the PR.
 
-![Open a PR]()
+See below what the GUI looks like when you have a branch to open a PR for, and what the PR editing window looks like.
+![Open a PR](figures/PR_open_request.png)
+![PR example](figures/PR_example.png)
+This is what the PR looks like upon opening, before adding any reviewers and for a repo without branch protection.
+![PR ready to merge](figures/PR_ready_to_merge.png)
+Please note that you can still make changes to a branch after a PR has been opened.
+
 ***
 
 ## Assign a colleague, get a review, and merge after approval
@@ -132,6 +138,7 @@ A pull request is a proposal to merge changes from your branch into a target bra
         GitHub documents when each strategy is appropriate and how it appears in history. [\[docs.github.com\]](https://docs.github.com/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges)
 
 Finally, click Merge. After merging, it's common to delete the now-merged topic branch on the server; GitHub can do this automatically if configured. [\[docs.github.com\]](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request)
+
 
 ***
 
@@ -157,21 +164,6 @@ Finally, click Merge. After merging, it's common to delete the now-merged topic 
 *   Follow repository standards: PR templates, CODEOWNERS, protected branches, rulesets. [\[docs.github.com\]](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/managing-and-standardizing-pull-requests)
 *   Write good commit messages (imperative subject, optional wrapped body explaining rationale). [\[cbea.ms\]](https://cbea.ms/git-commit/)
 
-***
-
-## A compact Git glossary (with quick historical notes)
-
-*   Commit: A node in the project history that records a snapshot of the tree and metadata (author, message, parents). Not merely a diff in concept. [\[git-scm.com\]](https://git-scm.com/docs/gitglossary), [\[git-scm.com\]](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
-*   Branch: A reference (pointer) to a commit, the “tip” of a line of development. Lightweight by design. [\[git-scm.com\]](https://git-scm.com/docs/gitglossary), [\[git-scm.com\]](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
-*   Switch vs. Checkout: Historically, `checkout` did both “switch branch” and “restore files.” Git 2.23 split that intent: `git switch` (branches) and `git restore` (files), to reduce ambiguity. [\[git-scm.com\]](https://git-scm.com/docs/git-switch), [\[stackoverflow.com\]](https://stackoverflow.com/questions/57265785/whats-the-difference-between-git-switch-and-git-checkout-branch)
-*   Pull Request (PR): On GitHub, a request to merge changes from one branch to another with review and checks. The name reflects Git's distributed roots: originally, contributors would ask a maintainer to pull their branch (e.g., by emailing a `git request-pull` summary). Git still exposes the `git request-pull` command, and the Linux kernel's maintainer flow uses signed pull requests, hence the term's lineage. [\[git-scm.com\]](https://git-scm.com/docs/git-request-pull), [\[docs.kernel.org\]](https://docs.kernel.org/maintainer/pull-requests.html)
-
-### Why “pull” and why “request”?
-
-*   Pull (verb) predates computing, “to draw toward oneself”, appropriately describing the maintainer pulling your branch into the mainline. [\[etymonline.com\]](https://www.etymonline.com/word/pull)
-*   Request traces to Latin *requirere* “to seek, ask for,” i.e., you are asking maintainers to accept and integrate your work. [\[etymonline.com\]](https://www.etymonline.com/word/request)
-*   Historically, before rich web UIs, the email-based workflow involved pushing your branch to a public repo, then emailing a *request to pull* (today mirrored by GitHub's PR UI). [\[git-scm.com\]](https://git-scm.com/docs/git-request-pull), [\[docs.kernel.org\]](https://docs.kernel.org/maintainer/pull-requests.html)
-    *   For deeper narrative histories of the PR concept and its evolution from the Linux kernel and early Git days to modern platforms, see curated retrospectives by practitioners. [\[rdnlsmith.com\]](https://rdnlsmith.com/posts/2023/004/pull-request-origins/), [\[felipec.wo...dpress.com\]](https://felipec.wordpress.com/2025/07/21/pull-request-etymology/)
 
 ***
 
