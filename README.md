@@ -59,13 +59,13 @@ VS Code will detect Git and offer the full Source Control workflow.
 *  Branches are places where we will make code changes that our main branch can "pull" in with a "Pull Request".
 ### Terminal 
 ```bash
-git switch -c my_branch_name
+git switch -c <my_branch_name>
 ```
 
 *   `git switch -c` both creates (-c) and checks out (switch) the branch. The newer `switch` command focuses solely on branch operations, reducing the ambiguity of the older, multi-purpose `checkout`. 
 * [What is the difference between git switch and checkout?](https://stackoverflow.com/questions/57265785/whats-the-difference-between-git-switch-and-git-checkout-branch)
 ### VSCode GUI 
-Use the **branch name** in the Status Bar → **Create New Branch** → provide `my_branch_name`. The editor will switch you to the new branch.
+Use the **branch name** in the Status Bar → Create New Branch → provide `<my_branch_name>`. The editor will switch you to the new branch.
 ![New branch with the UI](figures/new_branch_ui.png)
 After using the terminal or GUI, your window will look something like this:
 ![VS code source control window](figures/initial_branch_commit.png)
@@ -77,40 +77,48 @@ Create a file called "hello_world.py" and place the code `print("Hello, World!")
 ***
 
 ## Stage and commit your changes
-*   A **commit** records a snapshot of the staged content and links it into the repository's history DAG. 
-*   **Commit message guidance**: Use an imperative, concise subject and (when needed) a body explaining intent. Chris Beams' “Seven Rules” are widely cited for clarity and consistency. [\[cbea.ms\]](https://cbea.ms/git-commit/)
+*   A commit records a snapshot of the staged content and links it into the repository's history DAG. 
+* You **cannot** leave out the **commit message**, or the commit will not work.
+*   Commit message guidance: Use an imperative, concise subject and (when needed) a body explaining intent. Chris Beams' “Seven Rules” are widely cited for clarity and consistency. [\[cbea.ms\]](https://cbea.ms/git-commit/)
+
+
 ### Terminal
-Stage and commit the feature change
+Stage and commit the feature change, or all changes, and push changes to the remote branch.
 
 ```bash
-# Stage the change 
+# Stage the change (specific file)
 git add src/hellow_world.py
+# Stage all changes 
+git add . 
 # Commit the change 
 git commit -m "feat: add hello world file"
 # Push your commit to remote  
 git push -u origin <my_branch_name>
 ```
-> \[Figure 7: VS Code Source Control view showing two commits, with message box demonstrating an imperative subject line]
+
 
 ### VSCode GUI
-Stage specific files in **Source Control** (the “+” icons), type each commit message, and press **Commit**. VS Code mirrors the command-line operations. [\[code.visua...studio.com\]](https://code.visualstudio.com/docs/sourcecontrol/overview)
+VS Code GUI mirrors the command-line operations.
+* Stage specific files in Source Control, using the “+” icons. Or stage all of them using the “+” icon next to "Changes"
+* Type your commit message, and press Commit. 
+* Refresh the branch by allowing all pulls and pushes to happen that have been fetched from the remote. This should only be used if you know you will have no merge conflicts.
 
+![GUI staging and committing](figures/gui_stage_commit.png)
+![Push pull indicator](figures/push_pull_indicator.png)
 
 ***
 
 
 ## Open a Pull Request on GitHub.com
+A pull request is a proposal to merge changes from your branch into a target branch (commonly `main`). It provides a structured space for review, discussion, checks, and, eventually, integration. [\[docs.github.com\]](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
 
-1.  Navigate to your repository on GitHub. You will typically see a prompt: **“Compare & pull request”** for your newly pushed branch.
+1.  Navigate to your repository on GitHub. You will typically see a prompt: “Compare & pull request” for your newly pushed branch.
 2.  Click it and fill out:
-    *   **Title**: short imperative summary, e.g., “Add `greet(name)` and unit test”.
-    *   **Description**: context, rationale, and any risks.
-    *   Optionally link issues with keywords (e.g., `Closes #123`) so the linked issue auto-closes on merge. [\[docs.github.com\]](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/using-keywords-in-issues-and-pull-requests)
+    *   Title: short imperative summary, e.g., “Add `hello_world`”.
+    *   Description: context, rationale, and any risks.
 3.  Submit the PR.
 
-A **pull request** is a proposal to merge changes from your branch into a target branch (commonly `main`). It provides a structured space for review, discussion, checks, and, eventually, integration. [\[docs.github.com\]](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
-
-> \[Figure 9: GitHub's “Open a pull request” page with a descriptive title, a checklist, and issue links via keywords]
+![Open a PR]()
 ***
 
 ## Assign a colleague, get a review, and merge after approval
