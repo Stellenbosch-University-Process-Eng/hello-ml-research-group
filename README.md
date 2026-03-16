@@ -73,48 +73,31 @@ After using the terminal or GUI, your window will look something like this:
 
 ## Make a minimal feature change 
 Create a file called "hello_world.py" and place the code `print("Hello, World!")` in the file. Save the file. It should now appear on your source control list. 
-
+![a change in the repo](figures/new_change.png)
 ***
 
-## Stage and commit your changes (two commits, with clear messages)
-
-### Terminal
-  Commit the feature change
-
-```bash
-git add src/
-git commit -m "feat(greeter): add greet(name) that returns a formatted hello"
-```
-
- Commit the corresponding test
-
-```bash
-git add tests/test_greeter.py
-git commit -m "test(greeter): add unit test for greet(name)"
-```
-
-*   A **commit** records a snapshot of the staged content and links it into the repository's history DAG. This is more than a diff; conceptually Git stores full snapshots, deduplicating unchanged content for efficiency. [\[git-scm.com\]](https://git-scm.com/docs/gitglossary), [\[git-scm.com\]](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F)
+## Stage and commit your changes
+*   A **commit** records a snapshot of the staged content and links it into the repository's history DAG. 
 *   **Commit message guidance**: Use an imperative, concise subject and (when needed) a body explaining intent. Chris Beams' “Seven Rules” are widely cited for clarity and consistency. [\[cbea.ms\]](https://cbea.ms/git-commit/)
+### Terminal
+Stage and commit the feature change
 
+```bash
+# Stage the change 
+git add src/hellow_world.py
+# Commit the change 
+git commit -m "feat: add hello world file"
+# Push your commit to remote  
+git push -u origin <my_branch_name>
+```
 > \[Figure 7: VS Code Source Control view showing two commits, with message box demonstrating an imperative subject line]
 
 ### VSCode GUI
 Stage specific files in **Source Control** (the “+” icons), type each commit message, and press **Commit**. VS Code mirrors the command-line operations. [\[code.visua...studio.com\]](https://code.visualstudio.com/docs/sourcecontrol/overview)
 
+
 ***
 
-## Push your branch to GitHub
-### Terminal
-```bash
-git push -u origin feature/greeting-message
-```
-
-*   `-u` establishes **upstream** tracking so future `git push` / `git pull` know which remote branch to synchronize with. **origin** is the default remote created by `clone`. [\[docs.github.com\]](https://docs.github.com/en/get-started/git-basics/managing-remote-repositories)
-
-
-### VSCode GUI
-After committing 
-***
 
 ## Open a Pull Request on GitHub.com
 
