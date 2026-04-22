@@ -8,7 +8,7 @@ A repo for the "hello world" exercise with Github for the research group. This r
 * [Create a GitHub account](https://github.com/)
 * Membership in the [Stellenbosch-University-Process-Eng organization](https://github.com/Stellenbosch-University-Process-Eng).
 * Log into your Github account on VSCode, on the left hand side on the bottom of the screen of VSCode, person looking icon.
-* Configure your git identity in the command line (Powershell on Windows or Linux on Mac):
+* Configure your git identity in the command line / terminal (Powershell on Windows or Linux on Mac):
     ```bash
     git config --global user.name "Your Name"
     git config --global user.email "your.email@example.com"
