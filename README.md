@@ -87,7 +87,7 @@ Stage and commit the feature change, or all changes, and push changes to the rem
 
 ```bash
 # Stage the change (specific file)
-git add src/hellow_world.py
+git add src/hello_world.py
 # Stage all changes 
 git add . 
 # Commit the change 
