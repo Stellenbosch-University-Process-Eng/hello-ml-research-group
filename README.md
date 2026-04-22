@@ -1,3 +1,6 @@
+# The most important thing...
+Thanks for taking the time to setup a useful tutorial Francesca
+
 # hello-ml-research-group
 A repo for the "hello world" exercise with Github for the research group. This repo is intended to be used as a space to get comfortable with using Github, and this readme is a tutorial on basic github use, including best practices. This is intended to be followed using the command line or the VS Code GUI, options for both given for all steps. 
 ***
