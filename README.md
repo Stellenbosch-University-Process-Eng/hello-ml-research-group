@@ -41,8 +41,11 @@ cd <REPO>
 code .
 ```
 The commands in the terminal
+
 ![Command line cloning a repo](figures/create_repo_terminal.png)
+
 VS code opening from the terminal command `code .`
+
 ![Open VS code from terminal](figures/open_vscode_terminal.png)
 
 ### VS Code GUI
@@ -66,13 +69,16 @@ git switch -c <my_branch_name>
 * [What is the difference between git switch and checkout?](https://stackoverflow.com/questions/57265785/whats-the-difference-between-git-switch-and-git-checkout-branch)
 ### VSCode GUI 
 Use the branch name in the Status Bar → Create New Branch → provide `<my_branch_name>`. The editor will switch you to the new branch.
+
 ![New branch with the UI](figures/new_branch_ui.png)
 After using the terminal or GUI, your window will look something like this:
+
 ![VS code source control window](figures/initial_branch_commit.png)
 ***
 
 ## Make a minimal feature change 
 Create a file called "hello_world.py" and place the code `print("Hello, World!")` in the file. Save the file. It should now appear on your source control list. 
+
 ![a change in the repo](figures/new_change.png)
 ***
 
@@ -104,6 +110,7 @@ VS Code GUI mirrors the command-line operations.
 * Refresh the branch by allowing all pulls and pushes to happen that have been fetched from the remote. This should only be used if you know you will have no merge conflicts.
 
 ![GUI staging and committing](figures/gui_stage_commit.png)
+
 ![Push pull indicator](figures/push_pull_indicator.png)
 
 ***
@@ -119,10 +126,15 @@ A [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pul
 3.  Submit the PR.
 
 See below what the GUI looks like when you have a branch to open a PR for, and what the PR editing window looks like.
+
 ![Open a PR](figures/PR_open_request.png)
+
 ![PR example](figures/PR_example.png)
+
 This is what the PR looks like upon opening, before adding any reviewers and for a repo without branch protection.
+
 ![PR ready to merge](figures/PR_ready_to_merge.png)
+
 Please note that you can still make changes to a branch after a PR has been opened.
 
 ***
